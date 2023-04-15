@@ -7,6 +7,6 @@ module.exports = async(req, res) => {
         res.status(200).json(getAllDogs);
     }
     catch(err){
-        res.status(400).json({err: err.message})
+        res.status(500).json({err: err.message})
     }
 }
