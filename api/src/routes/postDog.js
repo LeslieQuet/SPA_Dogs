@@ -2,11 +2,14 @@
 //Falta definir que devuelve el server;
 const createADog = require('../controllers/createADog')
 
-module.exports = (req, res) => {
-    const {image, name, height, weight, years} = req.body;
+//FALTAN validaciones de atributos
+
+module.exports = async (req, res) => {
+    const {image, name, height, weight, years, temperaments} = req.body;
+    console.log(temperaments)
     try{
-        const postADog = createADog();
-        res.status(201).json({postADog})
+        const newDog = await createADog({image, name, height, weight, years, temperaments});
+        res.status(200).json({newDog})
     }
     catch(err){
         res.status(400).json({err: err.message});

@@ -4,19 +4,30 @@
 require('dotenv').config();
 const { URL_API, URL_API_Q, KEY } = process.env;
 const axios = require('axios');
+const {Dog, Temperament} = require('../db');
 
 
-const getAllDogs = async (name) => {
+const dogsGetter = async (name) => {
     if(name){
-        const byName = await axios.get(`${URL_API_Q}${name}`)
-        if(Object.entries(byName.data).length === 0) throw Error ('No hay concidencias de raza')
-        return byName.data; 
+        const breedByName = await axios.get(`${URL_API_Q}${name}`)
+        if(Object.entries(breedByName.data).length === 0) throw Error ('No hay concidencias de raza')
+        return breedByName.data; 
     }
     else {
-        let dogsApi = await axios.get(`${URL_API}?api_key=${KEY}`)
-        if(dogsApi)return dogsApi.data;
+        const allDogsApi = await axios.get(`${URL_API}?api_key=${KEY}`)
+        const allDogsDB = await Dog.findAll({
+            include: {
+                model: Temperament,
+                attributes: ['name'],
+                through: {
+                    attributes: [],
+                },
+            }
+        })
+        if(allDogsApi && allDogsDB) allDogsApi.data.concat(allDogsDB);
+        return allDogsApi.data;
     }
 }        
 
-module.exports = getAllDogs;
+module.exports = dogsGetter;
  

@@ -10,8 +10,8 @@ module.exports = (sequelize) => {
       primaryKey: true,
     },
     image: {
-      type: DataTypes.BLOB,
-      allowNull: false,
+      type: DataTypes.STRING,
+      // allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
