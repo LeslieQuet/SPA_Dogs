@@ -6,9 +6,8 @@ const createADog = require('../controllers/createADog')
 
 module.exports = async (req, res) => {
     const {image, name, height, weight, years, temperaments} = req.body;
-    console.log(temperaments)
     try{
-        const newDog = await createADog({image, name, height, weight, years, temperaments});
+        const newDog = await createADog(image, name, height, weight, years, temperaments);
         res.status(200).json({newDog})
     }
     catch(err){

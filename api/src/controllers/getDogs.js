@@ -6,7 +6,6 @@ const { URL_API, URL_API_Q, KEY } = process.env;
 const axios = require('axios');
 const {Dog, Temperament} = require('../db');
 
-
 const dogsGetter = async (name) => {
     if(name){
         const breedByName = await axios.get(`${URL_API_Q}${name}`)
@@ -24,10 +23,10 @@ const dogsGetter = async (name) => {
                 },
             }
         })
-        if(allDogsApi && allDogsDB) allDogsApi.data.concat(allDogsDB);
-        return allDogsApi.data;
+    const allDogs = allDogsDB.concat(allDogsApi.data);
+    return allDogs;
     }
-}        
-
+}
+    
 module.exports = dogsGetter;
  
