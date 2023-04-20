@@ -1,25 +1,24 @@
 import './App.css';
-import Home from './Components/Home'
+import Home from './Views/Home/Home'
 import BreedFinder from './Components/BreedFinder';
 import ImportingTemps from './Components/ImportingTemps';
-import About from './Components/About';
-import {Route, Switch, Link} from "react-router-dom"
+import About from './Views/About/About';
+import {Route, Routes, Link, useLocation} from "react-router-dom"
+
 
 function App() {
+  const { pathname } = useLocation();
   return (
     <div className="App">
-      <Link to="/home">
+      {pathname === "/" && <Link to="/dogs">
         <button>Hora de ver perritos</button>
-      </Link>
-      <div className='AppContainer'>
-        <Switch>
-          {/* <Route path="/" element={<Landing/>} /> */}
-          <Route path="/dogs" element={<Home/>} />
-          <Route path="/dogs/:id" element= {<BreedFinder/>}/>
-          <Route path="/temperments" element= {<ImportingTemps/>}/>
-          <Route path= "/about" element= {<About/>}/>
-        </Switch>
-      </div> */
+      </Link>}
+      <Routes>
+        <Route path="/dogs" element={<Home/>} />
+        <Route path="/dogs/:id" element= {<BreedFinder/>}/>
+        <Route path="/temperments" element= {<ImportingTemps/>}/>
+        <Route path= "/about" element= {<About/>}/>
+      </Routes>
     </div>
   );
 }
