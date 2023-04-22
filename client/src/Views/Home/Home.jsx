@@ -10,7 +10,7 @@ export default function Home(props){
             <div>
                 <button className={style.xButton} onClick={props.getDogs}>Traer perros</button>
             </div>
-            <ListedDogs onClose={props.onClose} breeds={props.breeds}/>
+            <ListedDogs/>
             <button>Botón de filtrado</button>
             <button>Botón de ordenar</button>
             {/* Falta paginado */}

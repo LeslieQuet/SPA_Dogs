@@ -1,40 +1,40 @@
-.breedContainer{
+.cardContainer{
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: auto;
-    /* min-height: 310px; */
+    min-height: 310px;
     width: fit-content;
     min-width: 110px;
     padding: 1em;
     margin: 2em;
-    background-color: rgb(55, 47, 47, 0.4);
-    border-radius: 15%;
+    background-color: rgba(31, 28, 28, 0.8);
+    border-radius: 20%;
     box-shadow: 10px 11px 22px 2px rgba(0, 0, 0, 0.75);
 }
 
-.container:hover{
+/* .container:hover{
     box-shadow: 10px 11px 22px 2px hsla(52, 55%, 38%, 0.75), -16px -20px 50px 4px rgba(16,204,239,0.99);
-    text-shadow: 4px 4px 4px rgba(255, 145, 0, 0.77);  /*#00ff77 */
-}
+    text-shadow: 4px 4px 4px rgba(255, 145, 0, 0.77); 
+} */
 
-.xButton{
+/* .xButton{
     float: right;
     border: none;
     margin: 0 10px;
     width: fit-content;
     height: fit-content;
-    background-color: #ff7700; /* rgb(66, 255, 85);*/
+    background-color: #ff7700;
     border-radius: 15%;
     font-weight: bold;
     transition: 0.5s;
-}
+} */
 
-.xButton:hover{
+/*.xButton:hover{
     cursor: pointer;
     background-color: rgb(255, 98, 66);
     box-shadow: 6px 7px 22px -3px rgba(0,0,0,0.72);
-}
+} */
 
 .cardText{
     font-size: 3vh;;
@@ -42,11 +42,17 @@
     color: white;
 }
 
-.cardTitle{
-    color: black;
+.cardDitail{
     text-decoration: none;
-    font-family: shadowsInto;
-    font-size: 5vh;;
+    font-size: 3vh;;
+    color: white;
+}
+
+.cardDitail:hover{
+    cursor: pointer;
+    background-color: rgba(200, 61, 33, 0.6);
+    box-shadow: 6px 7px 22px -3px rgba(0,0,0,0.5);
+    border-radius: 20%;
 }
 
 .dogImage{
@@ -54,7 +60,7 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 15%;
-    box-shadow: 0px 0px 48px 23px rgba(255, 85, 0, 0.75);
+    /* box-shadow: 0px 0px 48px 23px rgba(255, 85, 0, 0.75); */
     box-sizing: content-box;
     width: 80%;
 }
