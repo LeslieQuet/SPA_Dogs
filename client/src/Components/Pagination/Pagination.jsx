@@ -13,7 +13,6 @@ export default function Pagination({postPerPage, totalPosts, paginate}) {
         <div>
             <ul className={style.ulContainer}>
                 {pageNumbers.map(number => {
-                    console.log(number)
                     return (
                         <li className={style.li} key={number}> 
                             <button onClick={()=>paginate(number)}>{number}</button>

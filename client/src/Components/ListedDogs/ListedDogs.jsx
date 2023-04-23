@@ -29,9 +29,9 @@ export default function ListedDogs({loading, setLoading, indexOfFirstPost, index
                 key={breed.id}
                 id={breed.id}
                 name={breed.name}
-                image={breed.reference_image_id}
-                weight={breed.weight.metric}
-                temperments={breed.temperments}
+                image={breed.image}
+                weight={breed.weight}
+                temperament={breed.temperament}
                 />;
             })}
         </div>

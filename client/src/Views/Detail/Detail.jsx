@@ -21,11 +21,11 @@ function Detail(){
                 key={dogDetail.id}
                 id={dogDetail.id}
                 name={dogDetail.name}
-                image={dogDetail.reference_image_id}
-                temperments={dogDetail.temperments}
+                image={dogDetail.image}
+                temperament={dogDetail.temperament}
                 life_span={dogDetail.life_span}
-                weight={dogDetail.weight.metric}
-                height={dogDetail.height.metric}
+                weight={dogDetail.weight}
+                height={dogDetail.height}
             />
         </div>
     )

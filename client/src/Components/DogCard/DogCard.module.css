@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: column;
     height: auto;
-    min-height: 310px;
+    min-height: 250px;
     width: fit-content;
     min-width: 110px;
     padding: 1em;
@@ -36,16 +36,23 @@
     box-shadow: 6px 7px 22px -3px rgba(0,0,0,0.72);
 } */
 
-.cardText{
+.dogName{
     font-size: 3vh;;
+    display: inline-flexbox;
+    color: white;
+}
+
+.cardText{
+    font-size: 2vh;;
     display: inline-flexbox;
     color: white;
 }
 
 .cardDitail{
     text-decoration: none;
-    font-size: 3vh;;
+    font-size: 1em;;
     color: white;
+    padding: 10px;
 }
 
 .cardDitail:hover{
