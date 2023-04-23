@@ -7,13 +7,9 @@ export default function Home(props){
         <div className={style.HomeContainer}>
             <h2 className={style.text}>Este es el home y está lleno de perritos</h2>
             <SearchBar/>
-            <div>
-                <button className={style.xButton} onClick={props.getDogs}>Traer perros</button>
-            </div>
-            <ListedDogs/>
             <button>Botón de filtrado</button>
             <button>Botón de ordenar</button>
-            {/* Falta paginado */}
+            <ListedDogs/>
         </div>
     )
 }

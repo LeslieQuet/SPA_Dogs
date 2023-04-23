@@ -5,6 +5,9 @@
   background-image: url("./Assets/Img/puppy-landing.jpg");
   background-attachment: fixed;
   background-size:cover;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* .App-logo {

@@ -1,4 +1,4 @@
-//Class component renders DogCards at Home view
+//Class component renders DogCards at Home view, suscribes to Global State
 
 import React from 'react';
 import style from './ListedDogs.module.css'
@@ -24,6 +24,7 @@ class ListedDogs extends React.Component {
                     id={breed.id}
                     name={breed.name}
                     image={breed.image.url}
+                    weight={breed.weight.metric}
                     temperments={breed.temperments}
                     />;
                 })}

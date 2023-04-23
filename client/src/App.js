@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './Views/Home/Home'
-import BreedFinder from './Components/BreedFinder';
+import Detail from './Views/Detail/Detail';
 import ImportingTemps from './Components/ImportingTemps';
 import About from './Views/About/About';
 import {Route, Routes, Link, useLocation} from "react-router-dom"
@@ -15,7 +15,7 @@ function App() {
       </Link>}
       <Routes>
         <Route path="/home" element={<Home/>} />
-        <Route path="/dogs/:id" element= {<BreedFinder/>}/>
+        <Route path="/dogs/:ID" element= {<Detail/>}/>
         <Route path="/temperments" element= {<ImportingTemps/>}/>
         <Route path= "/about" element= {<About/>}/>
       </Routes>

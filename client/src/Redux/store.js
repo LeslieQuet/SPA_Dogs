@@ -1,3 +1,5 @@
+//Esta configuración del store permite que Redux pueda trabajar con funciones asíncronas (Redux Thunk)
+
 import {createStore, applyMiddleware, compose} from 'redux';
 import rootReducer from './reducer';
 import thunkMiddleware from 'redux-thunk';
