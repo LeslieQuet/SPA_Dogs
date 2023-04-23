@@ -15,7 +15,6 @@ function Detail(){
         dispatch(getDetail(ID));
     }, []);
 
-    console.log(dogDetail)
     return(
         <div className={style.detailBox}> 
             <DogDetail

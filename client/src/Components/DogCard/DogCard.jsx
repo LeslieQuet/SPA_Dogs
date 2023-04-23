@@ -4,7 +4,6 @@ import style from './DogCard.module.css'
 import { Link } from 'react-router-dom';
 
 export default function DogCard({id, image, name, weight, temperments}){
-      
     return(
         <div className={style.cardContainer}>
             <h2 className={style.cardText}>Raza: {name}</h2>
