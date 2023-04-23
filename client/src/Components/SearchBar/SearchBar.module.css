@@ -4,7 +4,24 @@
     background-color: orange;
 }
 
-.text{
-    font-size: 3vh;
-    color: white;
+.searchContainer{
+    width: max-content;
+    padding: 15px;
+    margin: 0px;
+}
+
+.searchButton{
+    font-family:'Lucida Sans', 'Lucida Sans Regular'; 
+    width: fit-content;
+    background-color: white;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 0px 15px 15px 0px; 
+    height: 6vh;
+}
+
+.searchInput{
+    border: 0px;
+    border-radius: 15px 0px 0px 15px; 
+    height: 6vh;
 }

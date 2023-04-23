@@ -23,7 +23,7 @@ class ListedDogs extends React.Component {
                     key={breed.id}
                     id={breed.id}
                     name={breed.name}
-                    image={breed.image.url}
+                    image={breed.reference_image_id}
                     weight={breed.weight.metric}
                     temperments={breed.temperments}
                     />;

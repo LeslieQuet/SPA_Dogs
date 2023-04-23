@@ -5,7 +5,7 @@ import { useSelector, useDispatch} from 'react-redux';
 import {getDetail} from '../../Redux/actions';
 import {useParams} from 'react-router-dom';
 
-function Detail(props){
+function Detail(){
     const {ID} = useParams();
     const dogDetail = useSelector((state) => state.detail);
 
@@ -15,6 +15,7 @@ function Detail(props){
         dispatch(getDetail(ID));
     }, []);
 
+    console.log(dogDetail)
     return(
         <div className={style.detailBox}> 
             <DogDetail
