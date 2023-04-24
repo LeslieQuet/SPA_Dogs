@@ -26,7 +26,6 @@ export default function Home(){
             <SearchBar/>
             <Filter/>
             <Pagination postPerPage={postPerPage} totalPosts={breeds.length} paginate={paginate}/>
-            <button>Botón de filtrado</button>
             <button>Botón de ordenar</button>
             <button onClick={()=>{dispatch(getDogs())}}>Volver a todas las razas</button>
             <ListedDogs loading={loading} setLoading={setLoading} indexOfFirstPost={indexOfFirstPost} indexOfLastPost={indexOfLastPost}/>

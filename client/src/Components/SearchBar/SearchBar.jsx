@@ -6,7 +6,6 @@ import { getBreed } from '../../Redux/actions';
 export default function SearchBar(){
     const [dog, setDog] = useState("")
     const changeHandler = (event) => {
-      //la propiedad value del event.target desestructurada y guardada en una variable//
       const {value} = event.target; 
       setDog(value);
     }

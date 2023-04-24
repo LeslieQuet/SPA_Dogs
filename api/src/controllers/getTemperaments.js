@@ -9,18 +9,31 @@ const getTemperaments = async(temper) => {
         let apiData = await axios.get(`${URL_API}?api_key=${KEY}`);
         let breedsData = apiData.data;
 
-        let dogsByTemp = [];
+        let breedsByTemp = [];
 
         breedsData.forEach(breed => {
             if(breed.temperament != undefined){
                 let stringArray = breed.temperament.split(', ');
                 if(stringArray.includes(temper)){
-                    dogsByTemp.push(breed);
+                    breedsByTemp.push(breed);
                 }
             }
         });
+
+        const dogsByTemp = breedsByTemp.map(breed=>{
+            return {
+                id: breed.id,
+                image: `https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`,
+                name: breed.name,
+                height: breed.height.metric,
+                weight: breed.weight.metric,
+                life_span: breed.life_span,
+                temperament: breed.temperament,
+            }
+        })
         return dogsByTemp;
     }
+    
     //Si la BD tiene temps los envía [{name + id}]
     const temperamentsDb = await Temperament.findAll();
     if (temperamentsDb.length >= 1) return temperamentsDb;
