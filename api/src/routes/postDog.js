@@ -5,9 +5,9 @@ const createADog = require('../controllers/createADog')
 //FALTAN validaciones de atributos
 
 module.exports = async (req, res) => {
-    const {image, name, height, weight, years, temperaments} = req.body;
+    const {image, name, height, weight, life_span, temperaments} = req.body;
     try{
-        const newDog = await createADog(image, name, height, weight, years, temperaments);
+        const newDog = await createADog(image, name, height, weight, life_span, temperaments);
         res.status(200).json({newDog})
     }
     catch(err){
