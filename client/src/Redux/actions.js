@@ -3,6 +3,8 @@ export const GET_DETAIL = 'GET_ DETAIL';
 export const GET_BREED_BY_NAME = 'GET_BREED_BY_NAME';
 export const GET_TEMPERAMENTS = 'GET_TEMPERAMENTS';
 export const GET_BREEDS_BY_TEMPER = 'GET_BREEDS_BY_TEMPER';
+export const ORDERED_BY_NAME = 'ORDERED_BY_NAME';
+export const ORDERED_BY_WEIGHT = 'ORDERED_BY_WEIGHT';
 
 export const getDogs = () => {
     return function(dispatch){
@@ -41,4 +43,12 @@ export const getBreedsByTemperaments = (temper) => {
         .then((res) => res.json())
         .then((data) => dispatch({type: GET_BREEDS_BY_TEMPER, payload: data}))
     }
+}
+
+export const orderedByName = (value) => {
+    return { type: ORDERED_BY_NAME, payload: value }
+}
+
+export const orderedByWeight = (value) => {
+    return { type: ORDERED_BY_WEIGHT, payload: value }
 }

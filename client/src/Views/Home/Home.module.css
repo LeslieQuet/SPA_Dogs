@@ -7,3 +7,24 @@
     display: inline-flexbox;
     color: white;
 }
+
+.button{
+  color: white;
+  float: right;
+  border: none;
+  margin: 0px 50px;
+  padding: 20px;
+  width: fit-content;
+  height: fit-content;
+  background-color: #5100ff; 
+  border-radius: 15%;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.button:hover{
+  color: black;
+  cursor: pointer;
+  background-color: rgb(66, 246, 255);
+  box-shadow: 6px 7px 22px -3px rgba(0,0,0,0.72);
+}

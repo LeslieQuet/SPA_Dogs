@@ -5,22 +5,16 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getDogs } from '../../Redux/actions';
 
-export default function ListedDogs({loading, setLoading, indexOfFirstPost, indexOfLastPost}){
+export default function ListedDogs({indexOfFirstPost, indexOfLastPost}){
     const breeds = useSelector((state) => state.breeds);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        setLoading(true);
         dispatch(getDogs());
-        setLoading(false);   
     }, []);
 
     const currentPosts = breeds.slice(indexOfFirstPost, indexOfLastPost);
-
-    if(loading) {
-        return <h2>Cargando... </h2>
-    }  
 
     return(
         <div className={style.cardsBox}> 

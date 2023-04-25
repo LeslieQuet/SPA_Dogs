@@ -7,37 +7,14 @@
     width: fit-content;
     min-width: 110px;
     padding: 1em;
-    margin: 2em;
+    margin: 1em;
     background-color: rgba(31, 28, 28, 0.8);
     border-radius: 20%;
     box-shadow: 10px 11px 22px 2px rgba(0, 0, 0, 0.75);
 }
 
-/* .container:hover{
-    box-shadow: 10px 11px 22px 2px hsla(52, 55%, 38%, 0.75), -16px -20px 50px 4px rgba(16,204,239,0.99);
-    text-shadow: 4px 4px 4px rgba(255, 145, 0, 0.77); 
-} */
-
-/* .xButton{
-    float: right;
-    border: none;
-    margin: 0 10px;
-    width: fit-content;
-    height: fit-content;
-    background-color: #ff7700;
-    border-radius: 15%;
-    font-weight: bold;
-    transition: 0.5s;
-} */
-
-/*.xButton:hover{
-    cursor: pointer;
-    background-color: rgb(255, 98, 66);
-    box-shadow: 6px 7px 22px -3px rgba(0,0,0,0.72);
-} */
-
 .dogName{
-    font-size: 3vh;;
+    font-size: 3vh;
     display: inline-flexbox;
     color: white;
 }
@@ -50,16 +27,21 @@
 
 .cardDitail{
     text-decoration: none;
-    font-size: 1em;;
-    color: white;
-    padding: 10px;
+    font-size: 3vh;
+    color: #5100ff;
+    padding: 0px;
+    border-radius: 20%;
+    background-color: rgba(0,0,0,0.5);
+    transition: 0.5s;
 }
 
 .cardDitail:hover{
+    margin: 0 10px;
     cursor: pointer;
-    background-color: rgba(200, 61, 33, 0.6);
-    box-shadow: 6px 7px 22px -3px rgba(0,0,0,0.5);
+    background-color: rgb(66, 246, 255);;
+    color: black;
     border-radius: 20%;
+    box-shadow: 6px 7px 22px -3px rgba(0,0,0,0.5);
 }
 
 .dogImage{
@@ -67,7 +49,6 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 15%;
-    /* box-shadow: 0px 0px 48px 23px rgba(255, 85, 0, 0.75); */
     box-sizing: content-box;
     width: 80%;
 }
