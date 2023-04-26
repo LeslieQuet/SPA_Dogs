@@ -1,0 +1,58 @@
+.container{
+    /* display: flex; */
+    align-items: center;
+    min-height: 310px;
+    width: auto;
+    min-width: 110px;
+    padding: 3em;
+    margin: 15px;
+    background-color: rgb(55, 47, 47, 0.4);
+    border-radius: 15%;
+    position: relative;
+    top: 5vh;
+    width: 60%;
+    box-shadow: 10px 11px 22px 2px rgba(0, 0, 0, 0.75);
+}
+
+.form{
+    float: right;
+    margin-right: 5em;
+}
+
+.text{
+    color: white;
+}
+
+.renderData{
+    color: white;
+    font-weight: bolder;
+    margin: 2em;
+}
+
+.xButton{
+    justify-self: center;
+    border: none;
+    margin: 15px;
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #00ff77; 
+    border-radius: 15%;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.searchInput{
+    border: 0px;
+    border-radius: 15px; 
+    width: 85%;
+    height: 3vh;
+    margin: 5px;
+    padding: 5px;
+}
+
+.xButton:hover{
+    cursor: pointer;
+    background-color: rgb(66, 255, 242);
+    box-shadow: 6px 7px 22px -3px rgba(0,0,0,0.72);
+}

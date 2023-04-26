@@ -1,4 +1,4 @@
-import { GET_DETAIL, GET_DOGS, GET_BREED_BY_NAME, GET_TEMPERAMENTS, GET_BREEDS_BY_TEMPER, ORDERED_BY_NAME, ORDERED_BY_WEIGHT } from "./actions";
+import { GET_DETAIL, GET_DOGS, GET_BREED_BY_NAME, GET_TEMPERAMENTS, GET_BREEDS_BY_TEMPER, ORDERED_BY_NAME, ORDERED_BY_WEIGHT, CREATE_A_BREED } from "./actions";
 
 const initialState = {
     breeds: [],
@@ -14,7 +14,6 @@ const rootReducer = (state=initialState, action) => {
         case GET_DETAIL:
             return {...state, detail: action.payload}
         case GET_BREED_BY_NAME:
-            console.log(action.payload)
             return {...state, breeds: action.payload}
         case GET_TEMPERAMENTS:
             return {...state, temperaments: action.payload}
@@ -23,13 +22,11 @@ const rootReducer = (state=initialState, action) => {
         case ORDERED_BY_NAME:
             let orderedByName = action.payload === 1 ? 
             state.breeds.sort(function (a, b) {
-                        console.log('pasé x name 1');                
                         if (a.name > b.name) return 1;
                         if (a.name < b.name) return -1;
                         return 0;
                 }):
                     state.breeds.sort(function (a, b) {
-                        console.log('pasé x name 2');                
                         if (a.name < b.name) return 1;
                         if (a.name > b.name) return -1;
                         return 0;
@@ -39,14 +36,14 @@ const rootReducer = (state=initialState, action) => {
         case ORDERED_BY_WEIGHT:
                 let orderedByWeight = action.payload === 3 ?
                 state.breeds.sort(function (a, b) {
-                    console.log('pasé x peso 3');                
                     return Number(a.weight.split(" - ")[0]) - Number(b.weight.split(" - ")[0])
                 }):
                 state.breeds.sort(function (a, b) {
-                    console.log('pasé x peso 4');                
                     return Number(a.weight.split(" - ")[1]) - Number(b.weight.split(" - ")[1])
             }).reverse();
             return {...state, breeds: orderedByWeight, completed: true}
+        case CREATE_A_BREED:
+            return {...state, detail: action.payload.newDog}
         default :
             return {...state};
     }

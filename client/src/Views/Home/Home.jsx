@@ -6,6 +6,7 @@ import Filter from '../../Components/Filter/Filter';
 import OrderedBy from '../../Components/OrderedBy/OrderedBy';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getDogs } from '../../Redux/actions'
 
 export default function Home(){
@@ -24,9 +25,12 @@ export default function Home(){
         <div className={style.HomeContainer}>
             <h2 className={style.text}>Este es el home y está lleno de perritos</h2>
             <SearchBar/>
-            <Filter/>
+            <Link to={`/dogs/create`} className={style.button}>
+                <h5>Crear una raza</h5>
+            </Link>
+            <Filter setCurrentPage={setCurrentPage}/>
             <button className={style.button} onClick={()=>{dispatch(getDogs())}}>Volver a todas las razas</button>
-            <OrderedBy/>
+            <OrderedBy setCurrentPage={setCurrentPage}/>
             <Pagination postPerPage={postPerPage} totalPosts={breeds.length} paginate={paginate}/>
             <ListedDogs indexOfFirstPost={indexOfFirstPost} indexOfLastPost={indexOfLastPost}/>
         </div>

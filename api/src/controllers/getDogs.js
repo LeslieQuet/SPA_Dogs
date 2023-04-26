@@ -7,6 +7,7 @@ const axios = require('axios');
 const {Dog, Temperament} = require('../db');
 
 const dogsGetter = async (name) => {
+    //Si recibe query hace la solicitud a la api con la query
     if(name){
         const breedByQuery = await axios.get(`${URL_API_Q}${name}`)
         if(Object.entries(breedByQuery.data).length === 0) throw Error ('No hay concidencias de raza')
@@ -35,6 +36,23 @@ const dogsGetter = async (name) => {
             }
         })
 
+    const dbDogs = allDogsDB.map(dog=>{
+        let string = '' 
+        dog.Temperaments.map(temper=> {
+            string = temper.name + ', '+ string;
+            return string;
+        })
+        return {
+            id: dog.id,
+            image: dog.image,
+            name: dog.name,
+            height: dog.height,
+            weight: dog.weight,
+            life_span: dog.life_span,
+            temperament: string,
+        } 
+    })
+
     const apiDogs = allDogsApi.data.map(dog=>{
         return {
             id: dog.id,
@@ -46,7 +64,7 @@ const dogsGetter = async (name) => {
             temperament: dog.temperament,
         }
     })    
-    const allDogs = allDogsDB.concat(apiDogs);
+    const allDogs = dbDogs.concat(apiDogs);
     return allDogs;
     }
 }

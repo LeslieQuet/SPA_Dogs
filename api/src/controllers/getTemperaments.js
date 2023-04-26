@@ -53,7 +53,7 @@ const getTemperaments = async(temper) => {
     temperamentsSet.forEach(temp =>{
         toBulkCreate.push({"name":temp})
     })
-    const savedTempers = await Temperament.bulkCreate(allTemperaments);
+    const savedTempers = await Temperament.bulkCreate(toBulkCreate);
     return savedTempers;
 };
 

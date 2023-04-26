@@ -6,7 +6,7 @@ import { useSelector, useDispatch} from 'react-redux';
 import { getTemperaments, getBreedsByTemperaments } from '../../Redux/actions';
 
 
-export default function Filter (){
+export default function Filter ({setCurrentPage}){
     //Trae los temperamentos de la BD y se los pasa al filtro
     
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export default function Filter (){
     
     //hace el dispatch con el temperamento seleccionado
     
-    const handleSelectChange = (event) => {dispatch(getBreedsByTemperaments(event.label))}
+    const handleSelectChange = (event) => {dispatch(getBreedsByTemperaments(event.label), setCurrentPage(1))}
     
     return(
         <div className={style.Filter}>
